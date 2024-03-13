@@ -22,7 +22,7 @@
                 alt=""
                 class="w-[40px] rounded-full"
               />
-              <p class="text-xs"><strong>Stein</strong></p>
+              <p class="text-xs"><strong>Placeholder</strong></p>
               <span class="text-xs text-gray-500">18 minutes ago</span>
             </div>
           </div>
