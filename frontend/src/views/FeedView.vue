@@ -1,0 +1,179 @@
+<template>
+  <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
+    <div class="main-left col-span-1">
+      <div class="p-4 bg-white border border-gray-200 text-center rounded-lg">
+        <img src="placeholder.jpg" alt="" class="rounded-full" />
+        <p class="mt-4"><strong>Placeholder</strong></p>
+        <div class="mt-6 flex space-x-8 justify-around">
+          <p class="text-xs text-gray-500">182 friends</p>
+          <p class="text-xs text-gray-500">120 posts</p>
+        </div>
+      </div>
+    </div>
+    <div class="main-center col-span-2 space-y-4">
+      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+        <div class="p-4">
+          <textarea
+            class="p-4 w-full bg-gray-100 rounded-lg"
+            placeholder="What's on your mind today?"
+          ></textarea>
+        </div>
+        <div class="p-4 border-t border-gray-100 flex justify-between">
+          <a
+            href="#"
+            class="inline-block py-4 px-6 bg-gray-600 text-white rounded-lg"
+            >Attach</a
+          >
+          <a
+            href="#"
+            class="inline-block py-4 px-6 bg-purple-600 text-white rounded-lg"
+            >Post</a
+          >
+        </div>
+      </div>
+      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+        <div class="mb-6 flex items-center justify-between">
+          <div class="flex items-center space-x-6">
+            <img src="person-40x40.png" alt="" class="w-[40px] rounded-full" />
+            <p><strong>Placeholder</strong></p>
+          </div>
+          <p class="text-gray-600">18 minutes ago</p>
+        </div>
+        <img src="placeholder-image.jpg" alt="" />
+        <div class="my-6 flex justify-between">
+          <div class="flex space-x-6">
+            <div class="flex items-center space-x-2">
+              <v-icon name="fa-regular-heart" />
+              <span class="text-gray-500 text-xs">82 likes</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <v-icon name="io-chatbubble-outline" />
+              <span class="text-gray-500 text-xs">8 comments</span>
+            </div>
+          </div>
+          <div><v-icon name="bi-three-dots-vertical" /></div>
+        </div>
+      </div>
+      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+        <div class="mb-6 flex items-center justify-between">
+          <div class="flex items-center space-x-6">
+            <img src="person-40x40.png" alt="" class="w-[40px] rounded-full" />
+            <p><strong>Placeholder</strong></p>
+          </div>
+          <p class="text-gray-600">18 minutes ago</p>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde qui odio
+          placeat dolorum suscipit provident. Ducimus ea quae quasi autem.
+        </p>
+        <div class="my-6 flex justify-between">
+          <div class="flex space-x-6">
+            <div class="flex items-center space-x-2">
+              <v-icon name="fa-regular-heart" />
+              <span class="text-gray-500 text-xs">82 likes</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <v-icon name="io-chatbubble-outline" />
+              <span class="text-gray-500 text-xs">8 comments</span>
+            </div>
+          </div>
+          <div><v-icon name="bi-three-dots-vertical" /></div>
+        </div>
+      </div>
+    </div>
+    <!-- Right Column -->
+    <div class="main-right col-span-1 space-y-4">
+      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+        <h3 class="mb-6 text-xl">People you may know</h3>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <img
+                src="person-40x40.png"
+                alt=""
+                class="w-[40px] rounded-full"
+              />
+              <p class="text-xs"><strong>Placeholder</strong></p>
+              <a
+                href="#"
+                class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
+                >Show
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <img
+                src="person-40x40.png"
+                alt=""
+                class="w-[40px] rounded-full"
+              />
+              <p class="text-xs"><strong>Placeholder</strong></p>
+              <a
+                href="#"
+                class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
+                >Show
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <img
+                src="person-40x40.png"
+                alt=""
+                class="w-[40px] rounded-full"
+              />
+              <p class="text-xs"><strong>Placeholder</strong></p>
+              <a
+                href="#"
+                class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
+                >Show
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+        <h3 class="mb-6 text-xl">Trending</h3>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <p class="text-xs">
+              <strong>#Coding</strong><br />
+              <span class="text-gray-500">180 posts</span>
+            </p>
+
+            <a
+              href="#"
+              class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
+              >Explore</a
+            >
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xs">
+              <strong>#Coding</strong><br />
+              <span class="text-gray-500">180 posts</span>
+            </p>
+
+            <a
+              href="#"
+              class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
+              >Explore</a
+            >
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xs">
+              <strong>#Coding</strong><br />
+              <span class="text-gray-500">180 posts</span>
+            </p>
+
+            <a
+              href="#"
+              class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
+              >Explore</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
