@@ -1,7 +1,5 @@
-<script setup>
 import { RouterLink } from "vue-router";
 </script>
-
 <template>
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="main-left">
@@ -41,6 +39,11 @@ import { RouterLink } from "vue-router";
               placeholder="Your Password"
               class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg"
             />
+          </div>
+          <div>
+            <button class="py-4 px-6 bg-purple-600 text-white rounded-lg">
+              Sign up
+            </button>
           </div>
         </form>
       </div>
