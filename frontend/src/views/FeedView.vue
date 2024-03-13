@@ -1,3 +1,7 @@
+<script setup>
+import PeopleYouMayKnow from "../components/PeopleYouMayKnow.vue";
+import Trending from "../components/Trending.vue";
+</script>
 <template>
   <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
     <div class="main-left col-span-1">
@@ -86,92 +90,18 @@
       <div class="p-4 bg-white border border-gray-200 rounded-lg">
         <h3 class="mb-6 text-xl">People you may know</h3>
         <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <img
-                src="person-40x40.png"
-                alt=""
-                class="w-[40px] rounded-full"
-              />
-              <p class="text-xs"><strong>Placeholder</strong></p>
-              <a
-                href="#"
-                class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
-                >Show
-              </a>
-            </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <img
-                src="person-40x40.png"
-                alt=""
-                class="w-[40px] rounded-full"
-              />
-              <p class="text-xs"><strong>Placeholder</strong></p>
-              <a
-                href="#"
-                class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
-                >Show
-              </a>
-            </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <img
-                src="person-40x40.png"
-                alt=""
-                class="w-[40px] rounded-full"
-              />
-              <p class="text-xs"><strong>Placeholder</strong></p>
-              <a
-                href="#"
-                class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
-                >Show
-              </a>
-            </div>
-          </div>
+          <PeopleYouMayKnow />
+          <PeopleYouMayKnow />
+          <PeopleYouMayKnow />
+          <PeopleYouMayKnow />
         </div>
       </div>
       <div class="p-4 bg-white border border-gray-200 rounded-lg">
         <h3 class="mb-6 text-xl">Trending</h3>
         <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <p class="text-xs">
-              <strong>#Coding</strong><br />
-              <span class="text-gray-500">180 posts</span>
-            </p>
-
-            <a
-              href="#"
-              class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
-              >Explore</a
-            >
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs">
-              <strong>#Coding</strong><br />
-              <span class="text-gray-500">180 posts</span>
-            </p>
-
-            <a
-              href="#"
-              class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
-              >Explore</a
-            >
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs">
-              <strong>#Coding</strong><br />
-              <span class="text-gray-500">180 posts</span>
-            </p>
-
-            <a
-              href="#"
-              class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg"
-              >Explore</a
-            >
-          </div>
+          <Trending />
+          <Trending />
+          <Trending />
         </div>
       </div>
     </div>
