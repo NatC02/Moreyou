@@ -1,7 +1,38 @@
-<script setup>
+<script>
 import PeopleYouMayKnow from "../components/PeopleYouMayKnow.vue";
 import Trending from "../components/Trending.vue";
+import axios from "axios";
+
+export default {
+  name: "FeedView",
+  components: {
+    PeopleYouMayKnow,
+    Trending,
+  },
+  data() {
+    return {
+      posts: [],
+    };
+  },
+  mounted() {
+    this.getFeed();
+  },
+  methods: {
+    getFeed() {
+      axios
+        .get("/api/posts")
+        .then((response) => {
+          console.log("data", response.data);
+          this.posts = response.data;
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    },
+  },
+};
 </script>
+
 <template>
   <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
     <div class="main-left col-span-1">
@@ -58,17 +89,22 @@ import Trending from "../components/Trending.vue";
           <div><v-icon name="bi-three-dots-vertical" /></div>
         </div>
       </div>
-      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+      <div
+        class="p-4 bg-white border border-gray-200 rounded-lg"
+        v-for="post in posts"
+        v-bind:key="post.id"
+      >
         <div class="mb-6 flex items-center justify-between">
           <div class="flex items-center space-x-6">
             <img src="person-40x40.png" alt="" class="w-[40px] rounded-full" />
-            <p><strong>Placeholder</strong></p>
+            <p>
+              <strong>{{ post.created_by.name }}</strong>
+            </p>
           </div>
-          <p class="text-gray-600">18 minutes ago</p>
+          <p class="text-gray-600">{{ post.created_at }}</p>
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde qui odio
-          placeat dolorum suscipit provident. Ducimus ea quae quasi autem.
+          {{ post.body }}
         </p>
         <div class="my-6 flex justify-between">
           <div class="flex space-x-6">
