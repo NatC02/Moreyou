@@ -17,3 +17,6 @@ class Post(models.Model):
     #likes_count
     created_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('-created_at',)
