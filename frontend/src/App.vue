@@ -33,20 +33,35 @@ export default {
         <div class="menu-left">
           <a href="#" class="text-xl">Socio</a>
         </div>
-        <div class="menu-center flex space-x-12">
+        <div
+          class="menu-center flex space-x-12"
+          v-if="userStore.user.isAuthenticated"
+        >
           <v-icon name="hi-home" class="text-purple-700" />
           <v-icon name="hi-chat-alt" />
           <v-icon name="md-notificationsnone" />
           <v-icon name="io-search" />
         </div>
         <div class="menu-right">
-          <div>
-            <img src="person-40x40.png" alt="" class="w-8 rounded-full" />
-          </div>
-          <div class="hidden">
-            <RouterLink to="/login">Login</RouterLink>
-            <RouterLink to="/login">Signup</RouterLink>
-          </div>
+          <template v-if="userStore.user.isAuthenticated">
+            <div>
+              <img src="person-40x40.png" alt="" class="w-8 rounded-full" />
+            </div>
+          </template>
+          <template v-else>
+            <div>
+              <RouterLink
+                to="/login"
+                class="py-4 px-6 bg-gray-600 text-white rounded-lg mr-4"
+                >Log in</RouterLink
+              >
+              <RouterLink
+                to="/signup"
+                class="py-4 px-6 bg-purple-600 text-white rounded-lg"
+                >Sign up</RouterLink
+              >
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -55,6 +70,5 @@ export default {
     <RouterView />
   </main>
   <Toast />
-</ >
-
-  <style scoped></style>
+</template>
+<style scoped></style>
