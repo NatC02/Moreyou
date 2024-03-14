@@ -23,3 +23,11 @@ def signup(request):
         message = 'error'
 
     return JsonResponse({'message': message})
+
+@api_view(['GET'])
+def me(request):
+    return JsonResponse({
+        'id': request.user.id,
+        'name': request.user.name,
+        'email': request.user.email,
+    })
