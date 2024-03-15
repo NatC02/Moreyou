@@ -45,7 +45,11 @@ export default {
         <div class="menu-right">
           <template v-if="userStore.user.isAuthenticated">
             <div>
-              <img src="person-40x40.png" alt="" class="w-8 rounded-full" />
+              <RouterLink
+                :to="{ name: 'profile', params: { id: userStore.user.id } }"
+              >
+                <img src="person-40x40.png" alt="" class="w-8 rounded-full" />
+              </RouterLink>
             </div>
           </template>
           <template v-else>
