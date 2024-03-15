@@ -23,8 +23,8 @@ export default {
       axios
         .get("/api/posts")
         .then((response) => {
-          console.log("data", response.data);
-          this.posts = response.data;
+          // console.log("data", response.data);
+          this.posts = "response.data";
         })
         .catch((error) => {
           console.log("error", error);
@@ -38,6 +38,7 @@ export default {
           //console.log("data", response.data);
           //Push ands to the end of the list n unshift adds to the beginning
           this.posts.unshift(response.data);
+          this.body = "";
         })
         .catch((error) => {
           console.log(error);
@@ -73,7 +74,7 @@ export default {
           </div>
         </form>
     </div>
-    <div class="main-center col-span-2 space-y-4">
+    <div class="main-center col-span-3 space-y-4">
       <div class="p-4 bg-white border border-gray-200 rounded-lg">
         <div class="p-4">
           <textarea
