@@ -48,11 +48,7 @@ export default {
               <RouterLink
                 :to="{ name: 'profile', params: { id: userStore.user.id } }"
               >
-              <img
-                  src="/images/person-40x40.png"
-                  alt=""
-                  class="w-8 rounded-full"
-                />
+                <img src="/images/person-40x40.png" alt="" class="w-8 rounded-full" />
               </RouterLink>
             </div>
           </template>
