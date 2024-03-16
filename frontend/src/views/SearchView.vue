@@ -1,59 +1,69 @@
-<script setup>
+<script>
+import axios from "axios";
 import PeopleYouMayKnow from "../components/PeopleYouMayKnow.vue";
 import Trending from "../components/Trending.vue";
+export default {
+  name: "SearchView",
+  components: {
+    PeopleYouMayKnow,
+    Trending,
+  },
+  data() {
+    return {
+      query: "",
+      users: [],
+      posts: [],
+    };
+  },
+  methods: {
+    submitForm() {
+      //console.log("Form submitted", this.query);
+      axios
+        .post("/api/search/", { query: this.query })
+        .then((response) => {
+          //console.log("response", response.data);
+          this.users = response.data.users;
+          this.posts = response.data.posts;
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    },
+  },
+};
 </script>
 <template>
   <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
     <div class="main-left col-span-3 space-y-4">
       <div class="bg-white border border-gray-200 rounded-lg">
-        <div class="p-4 flex space-x-4">
+        <form v-on:submit.prevent="submitForm" class="p-4 flex space-x-4">
           <input
             type="search"
+            v-model="query"
             class="p-4 w-full bg-gray-100 rounded lg"
             placeholder="Search terms ..."
           />
-          <a
-            href="#"
+          <button
+            type="submit"
             class="inline-block py-4 px-6 bg-purple-600 text-white rounded-lg"
-            >Post</a
+            >Post</button
           >
-        </div>
+        </form>
       </div>
       <!-- Search Result -->
       <div
         class="p-4 bg-white border border-gray-200 rounded-lg grid grid-cols-4 gap-4"
+        v-if="users.length > 0"
       >
-        <!-- Account Result -->
-        <div class="p-4 text-center bg-gray-100 rounded-lg">
-          <img src="placeholder.jpg" alt="" class="mb-6 rounded-full" />
-          <p><strong>Placeholder</strong></p>
-          <div class="mt-6 flex space-x-8 justify-around">
-            <p class="text-xs text-gray-500">182 friends</p>
-            <p class="text-xs text-gray-500">120 posts</p>
-          </div>
-        </div>
-        <!-- Account Result -->
-        <div class="p-4 text-center bg-gray-100 rounded-lg">
-          <img src="placeholder.jpg" alt="" class="mb-6 rounded-full" />
-          <p><strong>Placeholder</strong></p>
-          <div class="mt-6 flex space-x-8 justify-around">
-            <p class="text-xs text-gray-500">182 friends</p>
-            <p class="text-xs text-gray-500">120 posts</p>
-          </div>
-        </div>
-        <!-- Account Result -->
-        <div class="p-4 text-center bg-gray-100 rounded-lg">
-          <img src="placeholder.jpg" alt="" class="mb-6 rounded-full" />
-          <p><strong>Placeholder</strong></p>
-          <div class="mt-6 flex space-x-8 justify-around">
-            <p class="text-xs text-gray-500">182 friends</p>
-            <p class="text-xs text-gray-500">120 posts</p>
-          </div>
-        </div>
-        <!-- Account Result -->
-        <div class="p-4 text-center bg-gray-100 rounded-lg">
-          <img src="placeholder.jpg" alt="" class="mb-6 rounded-full" />
-          <p><strong>Placeholder</strong></p>
+        <div
+          class="p-4 text-center bg-gray-100 rounded-lg"
+          v-for="user in users"
+          v-bind:key="user.id"
+        >
+          <img src="/images/placeholder.jpg" alt="" class="mb-6 rounded-full" />
+          <p>
+            <strong>{{ user.name }}</strong>
+          </p>
           <div class="mt-6 flex space-x-8 justify-around">
             <p class="text-xs text-gray-500">182 friends</p>
             <p class="text-xs text-gray-500">120 posts</p>
@@ -61,17 +71,26 @@ import Trending from "../components/Trending.vue";
         </div>
       </div>
       <!-- Posts -->
-      <div class="p-4 bg-white border border-gray-200 rounded-lg">
+      <div
+        class="p-4 bg-white border border-gray-200 rounded-lg"
+        v-for="post in posts"
+        v-bind:key="post.id"
+      >
         <div class="mb-6 flex items-center justify-between">
           <div class="flex items-center space-x-6">
-            <img src="person-40x40.png" alt="" class="w-[40px] rounded-full" />
-            <p><strong>Placeholder</strong></p>
+            <img
+              src="/images/person-40x40.png"
+              alt=""
+              class="w-[40px] rounded-full"
+            />
+            <p>
+              <strong>{{ post.created_by.name }}</strong>
+            </p>
           </div>
-          <p class="text-gray-600">18 minutes ago</p>
+          <p class="text-gray-600">{{ post.time_since_created }} ago</p>
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde qui odio
-          placeat dolorum suscipit provident. Ducimus ea quae quasi autem.
+          {{post.body}}
         </p>
         <div class="my-6 flex justify-between">
           <div class="flex space-x-6">
