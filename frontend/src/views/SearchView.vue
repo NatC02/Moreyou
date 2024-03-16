@@ -46,7 +46,9 @@ export default {
           <button
             type="submit"
             class="inline-block py-4 px-6 bg-purple-600 text-white rounded-lg"
-            >Post</button
+            >
+              <v-icon name="io-search" />
+            </button
           >
         </form>
       </div>
@@ -62,7 +64,11 @@ export default {
         >
           <img src="/images/placeholder.jpg" alt="" class="mb-6 rounded-full" />
           <p>
-            <strong>{{ user.name }}</strong>
+            <strong>
+              <RouterLink :to="{ name: 'profile', params: { id: user.id } }">{{
+                user.name
+              }}</RouterLink>
+            </strong>
           </p>
           <div class="mt-6 flex space-x-8 justify-around">
             <p class="text-xs text-gray-500">182 friends</p>
@@ -84,7 +90,12 @@ export default {
               class="w-[40px] rounded-full"
             />
             <p>
-              <strong>{{ post.created_by.name }}</strong>
+              <strong>
+                <RouterLink
+                  :to="{ name: 'profile', params: { id: post.created_by.id } }"
+                  >{{ post.created_by.name }}</RouterLink
+                >
+              </strong>
             </p>
           </div>
           <p class="text-gray-600">{{ post.time_since_created }} ago</p>
