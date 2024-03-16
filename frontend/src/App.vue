@@ -40,7 +40,7 @@ export default {
           <v-icon name="hi-home" class="text-purple-700" />
           <v-icon name="hi-chat-alt" />
           <v-icon name="md-notificationsnone" />
-          <v-icon name="io-search" />
+          <RouterLink to="/search"><v-icon name="io-search" /></RouterLink>
         </div>
         <div class="menu-right">
           <template v-if="userStore.user.isAuthenticated">
