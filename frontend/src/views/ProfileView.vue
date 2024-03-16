@@ -33,6 +33,13 @@ export default {
     this.getFeed();
   },
 
+  //Retrieve feed when you switch from user profile to another one
+  beforeRouteUpdate(to, from, next) {
+    if (from.name === to.name) {
+      this.getFeed();
+    }
+  },
+
   //Get feed when you switch between two profiles
   watch: {
     "$route.params.id": {
