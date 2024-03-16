@@ -4,6 +4,8 @@ from django.shortcuts import render
 from . serializers import PostSerializer
 from . models import Post
 from . forms import PostForm
+from account.models import User
+from account.serializers import UserSerializer
 
 # Create your views here.
 @api_view(['GET'])
@@ -15,11 +17,13 @@ def post_list(request):
 
 @api_view(['GET'])
 def post_list_profile(request, id):
+    user = User.objects.get(pk=id)
     posts = Post.objects.filter(created_by_id=id)
 
-    serializer = PostSerializer(posts, many=True)
+    posts_serializer = PostSerializer(posts, many=True)
+    user_serializer = UserSerializer(user)
 
-    return JsonResponse(serializer.data, safe=False)
+    return JsonResponse({'posts':posts_serializer.data, 'user': user_serializer.data}, safe=False)
 
 @api_view(['POST'])
 def post_create(request):
