@@ -7,7 +7,7 @@
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2">
               <img
-                src="person-40x40.png"
+                src="/images/person-40x40.png"
                 alt=""
                 class="w-[40px] rounded-full"
               />
@@ -18,7 +18,7 @@
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2">
               <img
-                src="person-40x40.png"
+                src="/images/person-40x40.png"
                 alt=""
                 class="w-[40px] rounded-full"
               />
@@ -29,7 +29,7 @@
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2">
               <img
-                src="person-40x40.png"
+                src="/images/person-40x40.png"
                 alt=""
                 class="w-[40px] rounded-full"
               />
@@ -58,7 +58,7 @@
             </div>
             <div class="shrink-0 h-10 w-10 rounded-full bg-gray-300">
               <img
-                src="person-40x40.png"
+                src="/images/person-40x40.png"
                 alt=""
                 class="w-[40px] rounded-full"
               />
@@ -77,7 +77,7 @@
             </div>
             <div class="shrink-0 h-10 w-10 rounded-full bg-gray-300">
               <img
-                src="person-40x40.png"
+                src="/images/person-40x40.png"
                 alt=""
                 class="w-[40px] rounded-full"
               />
@@ -88,7 +88,7 @@
           <div class="flex w-full mt-2 space-x-3 max-w-md">
             <div class="shrink-0 h-10 w-10 rounded-full bg-gray-300">
               <img
-                src="person-40x40.png"
+                src="/images/person-40x40.png"
                 alt=""
                 class="w-[40px] rounded-full"
               />
