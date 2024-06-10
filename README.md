@@ -65,7 +65,7 @@ Built and implemented with:
    ```sh
    npm install
    ```
-3. Start frontend server `config.js`
+3. Start frontend server
    ```sh
    npm run dev
    ```
